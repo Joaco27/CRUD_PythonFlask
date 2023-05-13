@@ -1,0 +1,26 @@
+{% include 'menus/header.html' %}
+
+    <br>
+    {% for msj in get_flashed_messages() %}
+      <div class="alert alert-danger" role="alert">
+        {{msj}}
+      </div>
+    {% endfor %}
+    
+    <div class="container about-flex border border-dark w-50">
+      <form action="/regist" method="post" enctype="multipart/form-data">
+        Nombre:
+        <input type="text" name="txtNombre" id="txtNombre" class="form-control"> <br>
+
+        Mail:
+        <input type="text" name="txtMail" id="txtMail" class="form-control"> <br>
+
+        Contraseña:
+        <input type="password" name="txtPassword" id="txtPassword" class="form-control"> <br>
+
+        <input type="submit" class="btn btn-primary" value="Registrar"> <br><br>
+
+    </form>
+    </div>
+    
+{% include 'menus/footer.html' %}

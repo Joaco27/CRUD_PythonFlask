@@ -1,0 +1,30 @@
+{% include 'menus/header.html' %}
+{% for msg in get_flashed_messages() %}
+  <div class="alert alert-danger" role="alert">
+    {{msg}}
+  </div>
+{% endfor %}
+<table class="table table-light table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in carrito %}
+        <tr>
+            <td>{{c[0]}}</td>
+            <td>${{c[1]}}</td>
+            <td>
+                <a href="/destroyC/{{c[0]}}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% for t in total %}
+    <p>Total: {{t[0]}}</p>
+{% endfor %}
+<a href="/buy" class="btn btn-primary">Realizar Compra</a>
+{% include 'menus/footer.html' %}

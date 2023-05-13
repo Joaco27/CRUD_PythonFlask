@@ -1,0 +1,62 @@
+
+{% include 'menus/header.html' %}
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th colspan="4">Entradas</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for m in entradas %}
+        <tr>
+            <td>
+                <img class="img-thumbnail" width="100" src="uploads/{{m[2]}}" alt="foto m">
+            </td>
+            <td>{{m[1]}}</td>
+            <td>${{m[3]}}</td>
+            <td><a href="/edit/{{m[0]}}" class="btn btn-success">Editar</a> |
+                <a href="/destroy/{{m[0]}}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <thead class="thead-light">
+        <tr>
+            <th colspan="4">Principales</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for m in principal %}
+        <tr>
+            <td>
+                <img class="img-thumbnail" width="100" src="uploads/{{m[2]}}" alt="foto m">
+            </td>
+            <td>{{m[1]}}</td>
+            <td>${{m[3]}}</td>
+            <td><a href="/edit/{{m[0]}}" class="btn btn-success">Editar</a> |
+                <a href="/destroy/{{m[0]}}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <thead class="thead-light">
+        <tr>
+            <th colspan="4">Bebidas</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for m in bebidas %}
+        <tr>
+            <td>
+                <img class="img-thumbnail" width="100" src="uploads/{{m[2]}}" alt="foto m">
+            </td>
+            <td>{{m[1]}}</td>
+            <td>${{m[3]}}</td>
+            <td><a href="/edit/{{m[0]}}" class="btn btn-success">Editar</a> |
+                <a href="/destroy/{{m[0]}}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'menus/footer.html' %}

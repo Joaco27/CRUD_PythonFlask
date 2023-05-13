@@ -1,0 +1,23 @@
+{% include 'menus/header.html'%}
+<br>
+<div class="container about-flex border border-dark w-50">
+    <br>
+    <form method="post" action="/update" enctype="multipart/form-data">
+
+        ID del Producto:
+        <input type="number" value="{{ menu[0][0] }}" name="txtID" id="txtID" readonly><br><br>
+    
+        Nombre:
+        <input type="text" value="{{ menu[0][1] }}" name="txtNombre" id="txtNombre"><br><br>
+    
+        Costo:
+        <input type="number" value="{{ menu[0][3] }}" name="txtCosto" id="txtCosto"><br><br>
+    
+        Foto:{{ menu[0][2] }}
+        <input type="file" name="txtFoto" id="txtFoto"><br><br>
+    
+        <input type="submit" class="btn btn-primary" value="Guardar">
+    </form>
+    <br><br>
+</div>
+{% include 'menus/footer.html'%}

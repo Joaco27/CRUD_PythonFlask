@@ -1,0 +1,23 @@
+{% include 'menus/header.html' %}
+<table class="table table-light table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>Nombre</th>
+            <th>Contraseña</th>
+            <th>Mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for u in users %}
+        <tr>
+            <td>{{u[0]}}</td>
+            <td>{{u[1]}}</td>
+            <td>{{u[2]}}</td>
+            <td><a href="/editU/{{u[0]}}" class="btn btn-success">Editar (-)</a> |
+                <a href="/destroyU/{{u[0]}}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'menus/footer.html' %}

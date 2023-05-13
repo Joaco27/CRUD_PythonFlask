@@ -1,0 +1,39 @@
+{% include 'menus/header.html' %}
+
+<br>
+  {% for msj in get_flashed_messages() %}
+    <div class="alert alert-danger" role="alert">
+      {{msj}}
+    </div>
+  {% endfor %}
+
+<div class="container about-flex border border-dark w-50">
+  <form method="post" action="/store" enctype="multipart/form-data">
+    
+    Nombre:
+    <input type="text" name="txtNombre" id="txtNombre" class="form-control"> <br>
+
+    Costo:
+    <input type="number" name="txtCosto" id="txtCosto" class="form-control"> <br>
+
+    Tipo:
+    <div class="form-check">
+        <input type="radio" class="form-check-input" id="radio1" name="tipo" value="entrada" checked>entrada
+        <label class="form-check-label" for="radio1"></label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" id="radio2" name="tipo" value="principal">principal
+        <label class="form-check-label" for="radio2"></label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" id="radio3" name="tipo" value="bebida">bebida
+        <label class="form-check-label" for="radio3"></label>
+      </div><br>
+
+    Foto:
+    <input type="file" name="txtFoto" id="txtFoto" class="form-img"><br><br>
+
+    <input type="submit" class="btn btn-primary" value="Agregar"> <br><br>
+</form>
+</div>
+{% include 'menus/footer.html' %}

@@ -1,0 +1,58 @@
+
+{% include 'menus/header.html' %}
+
+<div class="container w-75">
+    <h1>Entradas</h1>
+    {% for m in entradas %}
+        <div class="container border border-dark rounded d-flex flex-row">
+            <div class="container d-flex align-items-center">
+                <img class="img-thumbnail" width="100" src="uploads/{{m[2]}}" alt="foto m">
+            </div>
+            <div class="container d-flex align-items-center">
+                <p>{{m[1]}}</p>
+            </div>
+            <div class="container d-flex align-items-center">
+                <p>${{m[3]}}</p>
+            </div>
+            <div class="container d-flex align-items-center">
+                <a href="./addCar/{{m[1]}}/{{m[3]}}" class="btn btn-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    {% endfor %}
+    <h1>Principales</h1>
+    {% for m in principal %}
+        <div class="container border border-dark rounded d-flex flex-row">
+            <div class="container d-flex align-items-center">
+                <img class="img-thumbnail" width="100" src="uploads/{{m[2]}}" alt="foto m">
+            </div>
+            <div class="container d-flex align-items-center">
+                <p>{{m[1]}}</p>
+            </div>
+            <div class="container d-flex align-items-center">
+                <p>${{m[3]}}</p>
+            </div>
+            <div class="container d-flex align-items-center">
+                <a href="./addCar/{{m[1]}}/{{m[3]}}" class="btn btn-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    {% endfor %}
+    <h1>Bebidas</h1>
+    {% for m in bebidas %}
+        <div class="container border border-dark rounded d-flex flex-row">
+            <div class="container d-flex align-items-center">
+                <img class="img-thumbnail" width="100" src="uploads/{{m[2]}}" alt="foto m">
+            </div>
+            <div class="container d-flex align-items-center">
+                <p>{{m[1]}}</p>
+            </div>
+            <div class="container d-flex align-items-center">
+                <p>${{m[3]}}</p>
+            </div>
+            <div class="container d-flex align-items-center">
+                <a href="./addCar/{{m[1]}}/{{m[3]}}" class="btn btn-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% include 'menus/footer.html' %}

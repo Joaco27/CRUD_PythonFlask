@@ -1,0 +1,22 @@
+{% include 'menus/header.html' %}
+<table class="table table-light table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>Usuario</th>
+            <th>Producto</th>
+            <th>Costo</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for h in hist %}
+        <tr>
+            <td>{{h[0]}}</td>
+            <td>{{h[1]}}</td>
+            <td>${{h[2]}}</td>
+            <td>{{h[3]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'menus/footer.html' %}
